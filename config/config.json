@@ -1,0 +1,67 @@
+{
+    "Hardware": {
+        "RequireSecureBoot": true,
+        "RequireTPM2": true,
+        "RequireIntelTXT": true,
+        "RequireSEV": false,
+        "RequireSGX": false
+    },
+    "Base": {
+        "MinimumAcceptanceLevel": "PartnerSupported",
+        "RequireSignedVIB": true,
+        "MaxPasswordAge": 90,
+        "MinPasswordLength": 15
+    },
+    "Management": {
+        "EnableSSH": false,
+        "EnableShell": false,
+        "EnableMOB": false,
+        "EnableSLP": false,
+        "EnableCIM": false,
+        "EnableSNMP": false,
+        "IdleTimeout": 600,
+        "MaxLoginAttempts": 3,
+        "LockoutPeriod": 900,
+        "PasswordHistory": 5
+    },
+    "Logging": {
+        "RemoteHost": "",
+        "RemotePort": 514,
+        "Protocol": "TCP",
+        "LogLevel": "info",
+        "RetentionDays": 7
+    },
+    "Network": {
+        "AllowedNetworks": [
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16"
+        ],
+        "DefaultDenyRule": true,
+        "EnableBPDUFilter": true
+    },
+    "Features": {
+        "RequireCHAP": true,
+        "SNMPCommunities": [],
+        "SSHCiphers": [
+            "aes256-gcm@openssh.com",
+            "aes128-gcm@openssh.com"
+        ]
+    },
+    "VirtualMachine": {
+        "RequireVMEncryption": true,
+        "EnableSecureBoot": true,
+        "MaxConsoleSessions": 1,
+        "DisableDevices": [
+            "cdrom",
+            "floppy",
+            "usb",
+            "serial"
+        ]
+    },
+    "VMwareTools": {
+        "MinimumVersion": "12.0.0",
+        "AutoUpgrade": true,
+        "EnableLogging": true
+    }
+}
